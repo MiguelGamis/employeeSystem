@@ -62,7 +62,7 @@ try
 					$content .= "<table>";
 					$content .= "<td width=300px><h3>Entry request for ".$request->firstName." ".$request->lastName."</h3></td>";
 					$content .= "<td>Submitted:</td><td width=390px id='submissionDate$requestID'/></td>\n";
-					$content .= "<td><a title='Edit' href='entryform.php?action=edit&requestid=$requestID'><div class='icon edit'></div></a><a title='Cancel' href='".get_redirect_url("deleterequest.php?requestid=".$requestID."&employeeid=".$request->employeeID)."'><div class='icon delete'></div></a></td>\n";
+					$content .= "<td><a href='entryform.php?action=edit&requestid=$requestID'><div class='icon edit'></div></a><a title='Cancel' href='".get_redirect_url("deleterequest.php?requestid=".$requestID."&employeeid=".$request->employeeID)."'><div class='icon delete'></div></a></td>\n";
 					$content .= "</table>";
 					$content .= "<table cellpadding='20'width='100%'><col width='1*'><col width='1*'><col width='1*'><tr>
 					<td><h4><div class='bigicon admin'></div>Administration Tasks</h4>$adminmessage</div><button name='adminexpand' onclick='expand(\"admin\", $requestID)'><div class='icon expand'></div></button><br></td>
@@ -102,12 +102,9 @@ try
 						 // div section in the same page.
 						 ajaxRequest.onreadystatechange = function(){
 						   if(ajaxRequest.readyState == 4){
-						      if($('#'+group+'Items').html() == '')
-						      	$('#'+group+'Items').html(ajaxRequest.responseText);
-						      else if($('#'+group+'Items').is(':visible'))
-						      	$('#'+group+'Items').hide();
-						      else
-								$('#'+group+'Items').show();
+						      var groupItems = document.getElementById(group+'Items');
+						      if(groupItems.innerHTML == '')
+						      	groupItems.innerHTML = ajaxRequest.responseText;
 						   }
 						 }
 						 // Now get the value from user and pass it to

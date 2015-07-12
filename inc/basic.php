@@ -237,6 +237,10 @@ function boxify($dataArray, $type, $item)
 			}
 			elseif($item == 'MailSlotAccessor')
 				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url($type."request.php?item=MailSlotAccessor&requestid=".$data->requestID."&mailslotaccessid=".$data->mailSlotAccessID)."'>";
+			elseif($item == 'PrintingAccess')
+				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url($type."request.php?item=PrintingAccess&requestid=".$data->requestID."&speedchart=".$data->speedChart)."'>";
+			elseif($item == 'SharedDriveAccess')
+				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url($type."request.php?item=SharedDriveAccess&requestid=".$data->requestID."&shareddriveid=".$data->sharedDriveID)."'>";
 			else
 				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url($type."request.php?item=".$item."&requestid=".$data->requestID)."'>";
 			$html .= ($type == 'approve') ? "<div class='smallicon unchecked'>" : "<div class='smallicon checked'>";
