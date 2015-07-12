@@ -102,9 +102,12 @@ try
 						 // div section in the same page.
 						 ajaxRequest.onreadystatechange = function(){
 						   if(ajaxRequest.readyState == 4){
-						      var groupItems = document.getElementById(group+'Items');
-						      if(groupItems.innerHTML == '')
-						      	groupItems.innerHTML = ajaxRequest.responseText;
+						      if($('#'+group+'Items').html() == '')
+						      	$('#'+group+'Items').html(ajaxRequest.responseText);
+						      else if($('#'+group+'Items').is(':visible'))
+						      	$('#'+group+'Items').hide();
+						      else
+								$('#'+group+'Items').show();
 						   }
 						 }
 						 // Now get the value from user and pass it to

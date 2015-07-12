@@ -1695,8 +1695,8 @@ class EmployeeDataManager
 	
 	function cancelSharedDriveAccess(RequestID $requestID, $sharedDrive)
 	{
-		$this->takeSharedDriveAccessQuery = $this->db->prepare("DELETE FROM sharedDriveAccess WHERE requestID = ? AND status = 'pending' AND sharedDriveID = ?;");
-		$this->takeSharedDriveAccessQuery->execute(array($requestID, $sharedDrive));
+		$this->cancelSharedDriveAccessQuery = $this->db->prepare("DELETE FROM sharedDriveAccess WHERE requestID = ? AND status = 'pending' AND sharedDriveID = ?;");
+		$this->cancelSharedDriveAccessQuery->execute(array($requestID, $sharedDrive));
 	}
 	
 	//TODO: Be more strict and assure status is done
@@ -2001,6 +2001,7 @@ class EmployeeDataManager
 		  employee.employeeID,
 		  firstName,
 		  lastName,
+		  sharedDriveID,
 		  request.requestID,
 		  UNIX_TIMESTAMP(request.dateSubmitted) as dateSubmitted FROM sharedDriveAccess JOIN request ON request.requestID = sharedDriveAccess.requestID JOIN employee ON employee.employeeID = request.employeeID WHERE sharedDriveAccess.status = '$status'");
 		$this->getSharedDriveAccessTasksQuery->execute();

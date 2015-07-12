@@ -7,25 +7,25 @@ $content .= "<h2>Pending Tasks</h2>";
 
 $content .= "<div class='bigicon computer'></div>";
 $computerTasks = $dataMgr->getComputerTasks('pending');
-$content .= boxify($computerTasks, 'approve', 'ComputerTasks');
+$content .= boxify($computerTasks, 'approve', 'ComputerAccess');
 
 $content .= "<div class='bigicon printing'></div>";
 $printingTasks = $dataMgr->getPrintingTasks('pending');
-$content .= boxify($printingTasks, 'approve', 'PrintingTasks');
+$content .= boxify($printingTasks, 'approve', 'PrintingAccess');
 
 $content .= "<div class='bigicon shareddrive'></div>";
 $sharedDriveTasks = $dataMgr->getSharedDriveAccessTasks('pending');
-$content .= boxify($sharedDriveTasks, 'approve', 'SharedDriveTasks');
+$content .= boxify($sharedDriveTasks, 'approve', 'SharedDriveAccess');
 
 $content .= "<div class='bigicon email'></div>";
 $emailTasks = $dataMgr->getEmailTasks('pending');
-$content .= boxify($emailTasks, 'approve', 'EmailTasks');
+$content .= boxify($emailTasks, 'approve', 'Email');
 $emailGroupingTasks = $dataMgr->getEmailGroupingTasks('pending');
-$content .= boxify($emailGroupingTasks, 'approve', 'EmailGroupingTasks');
+$content .= boxify($emailGroupingTasks, 'approve', 'EmailGrouping');
 
 $content .= "<div class='bigicon sitecore'></div>";
 $siteCoreAccessTasks = $dataMgr->getSiteCoreAccessTasks('pending');
-$content .= boxify($siteCoreAccessTasks, 'approve', 'siteCoreAccessTasks');
+$content .= boxify($siteCoreAccessTasks, 'approve', 'siteCoreAccess');
 
 $content .= "</td><td>";
 
@@ -33,25 +33,25 @@ $content .= "<h2>Done Tasks</h2>";
 
 $content .= "<div class='bigicon computer'></div>";
 $computerTasks = $dataMgr->getComputerTasks('done');
-$content .= boxify($computerTasks, 'approve', 'ComputerTasks');
+$content .= boxify($computerTasks, 'undo', 'ComputerAccess');
 
 $content .= "<div class='bigicon printing'></div>";
 $printingTasks = $dataMgr->getPrintingTasks('done');
-$content .= boxify($printingTasks, 'approve', 'PrintingTasks');
+$content .= boxify($printingTasks, 'undo', 'PrintingAccess');
 
 $content .= "<div class='bigicon shareddrive'></div>";
 $sharedDriveTasks = $dataMgr->getSharedDriveAccessTasks('done');
-$content .= boxify($sharedDriveTasks, 'approve', 'SharedDriveTasks');
+$content .= boxify($sharedDriveTasks, 'undo', 'SharedDriveAccess');
 
 $content .= "<div class='bigicon email'></div>";
 $emailTasks = $dataMgr->getEmailTasks('pending');
-$content .= boxify($emailTasks, 'approve', 'EmailTasks');
+$content .= boxify($emailTasks, 'undo', 'EmailAccess');
 $emailGroupingTasks = $dataMgr->getEmailGroupingTasks('done');
-$content .= boxify($emailGroupingTasks, 'approve', 'EmailGroupingTasks');
+$content .= boxify($emailGroupingTasks, 'undo', 'EmailGroupingAccess');
 
 $content .= "<div class='bigicon sitecore'></div>";
 $siteCoreAccessTasks = $dataMgr->getSiteCoreAccessTasks('done');
-$content .= boxify($siteCoreAccessTasks, 'approve', 'siteCoreAccessTasks');
+$content .= boxify($siteCoreAccessTasks, 'undo', 'siteCoreAccess');
 $content .= "</td></tr></table>";
 
 /*$content .= "<div class='bigicon computer'></div>";
