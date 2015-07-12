@@ -1,0 +1,212 @@
+.icon
+{
+    width:16px;
+    height:16px;
+}
+
+.bigicon
+{
+    width:64px;
+    height:64px;
+}
+
+.smallicon
+{
+    width:24px;
+    height:24px;
+}
+
+.edit
+{
+    background-image:url(images/document_edit.png);
+}
+
+.delete
+{
+    background-image:url(images/dialog_close.png);
+}
+
+.moveUp
+{
+    background-image:url(images/go_up.png);
+}
+
+.moveDown
+{
+    background-image:url(images/go_down.png);
+}
+
+.editQuestions
+{
+    background-image:url(images/applications-education-university.png);
+}
+
+.editDenied
+{
+    background-image:url(images/meeting-participant-no-response.png);
+}
+
+.editPeerAssignment
+{
+    background-image:url(images/list-add-user.png);
+}
+
+.duplicate
+{
+    background-image:url(images/edit-copy.png);
+}
+
+.script
+{
+    background-image:url(images/application-x-php.png);
+}
+
+.userManager
+{
+    background-image:url(images/list-add-user.png);
+}
+
+.new
+{
+    background-image:url(images/document-new.png);
+}
+
+.deleteUser
+{
+    background-image:url(images/meeting-participant-no-response.png);
+}
+
+.email
+{
+    background-image:url(images/IT/envelope68.png);
+}
+
+.computer
+{
+    background-image:url(images/IT/pc6.png);
+}
+
+.sitecore
+{
+    background-image:url(images/IT/website7.png);
+}
+
+.shareddrive
+{
+    background-image:url(images/IT/storage.png);
+}
+
+.printing
+{
+    background-image:url(images/IT/paper6.png);
+}
+
+.tenure
+{
+    background-image:url(images/IT/curriculum2.png);
+}
+
+.doornameplate
+{
+    background-image:url(images/IT/frames8.png);
+}
+
+.telephone
+{
+    background-image:url(images/IT/telephone20.png);
+}
+
+.locationaccess
+{
+	background-image:url(images/IT/keycard.png);
+}
+
+.mailbox
+{
+	background-image:url(images/IT/mail89.png);
+}
+
+.sharedmailbox
+{
+	background-image:url(images/IT/mail90.png);
+}
+
+.businesscard
+{
+	background-image:url(images/IT/business134.png);
+}
+
+.attendancetracker
+{
+	background-image:url(images/IT/calendar68.png);
+}
+
+.internalphonelistregistry
+{
+	background-image:url(images/IT/phonebook.png);
+}
+
+.ubconlinedirectory
+{
+	background-image:url(images/IT/list61.png);
+}
+
+.sauderwebsitestaffdirectory
+{
+	background-image:url(images/IT/staff.png);
+}
+
+.sauderstaffphotodirectory
+{
+	background-image:url(images/IT/photos15.png);
+}
+
+.telephone
+{
+	background-image:url(images/IT/telephone20.png);
+}
+
+.unchecked
+{
+	background-image:url(images/empty40.png);
+}
+
+.checked
+{
+	background-image:url(images/checked18.png);
+}
+
+.admin
+{
+	background-image:url(images/IT/administration1.png);
+}
+
+.HR
+{
+	background-image:url(images/IT/businessman116.png);
+}
+
+.IT
+{
+	background-image:url(images/IT/operator.png);
+}
+
+.expand
+{
+	background-image:url(images/expand16.png);
+}
+
+.checkmark
+{
+	background-image:url(images/checkmark.png);
+}
+
+.pending
+{
+	background-image:url(images/pending.png);
+}
+
+.edit
+{
+	background-image:url(images/edit.png);
+}

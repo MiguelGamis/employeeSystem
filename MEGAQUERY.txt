@@ -1,0 +1,73 @@
+		/*$this->loadEntryRequestQuery = $this->db->prepare("SELECT
+		request.requestID,
+		requestType, 
+		request.status, 
+		comments, 
+		employee.employeeID, 
+		firstName, 
+		lastName, 
+		CWLID, 
+		isNew, 
+		
+		position,
+		tenure.locationName,
+		tenure.tenureStatus,
+		tenure.tenureType,
+		UNIX_TIMESTAMP(startDate) as startDate,
+		UNIX_TIMESTAMP(endDate) as endDate,
+		ongoing,
+		term,
+		
+		orientationPackage.status as orientationPackage,
+		businessCard.status as businessCard,
+		PATSystemAccount.status as PATSystemAccount,
+		voiceService.status as voiceService,
+		internalPhoneListRegistry.status as internalPhoneListRegistry,
+		UBConlineDirectory.status as UBConlineDirectory,
+		sauderWebsiteStaffDirectory.status as sauderWebsiteStaffDirectory,
+		sauderStaffPhotoDirectory.status as sauderStaffPhotoDirectory,
+		
+		ownMail.status as ownMail,
+		sharedMail.status as sharedMail,
+		doorNamePlate.status as doorNamePlate,
+		locationAccess.status as locationAccess,
+		businessCard.status as businessCard,
+		computer.status as computer,
+		printingAccess.status as printingAccess,
+		email.status as email,
+		sharedDriveAccess.status as sharedDriveAccess,
+		emailGrouping.status as emailGrouping,
+		siteCoreLogin.status as siteCoreLogin
+		
+		FROM request JOIN employee ON request.employeeID = employee.employeeID 
+		JOIN tenure ON request.requestID = tenure.requestID
+		
+		LEFT JOIN locationAccess ON request.requestID = locationAccess.requestID
+		LEFT JOIN orientationPackage ON request.requestID = orientationPackage.requestID
+		LEFT JOIN businessCard ON request.requestID = businessCard.requestID
+		LEFT JOIN PATSystemAccount ON request.requestID = PATSystemAccount.requestID
+		LEFT JOIN voiceService ON request.requestID = voiceService.requestID
+		LEFT JOIN internalPhoneListRegistry ON request.requestID = internalPhoneListRegistry.requestID
+		LEFT JOIN UBConlineDirectory ON request.requestID = UBConlineDirectory.requestID
+		LEFT JOIN sauderWebsiteStaffDirectory ON request.requestID = sauderWebsiteStaffDirectory.requestID
+		LEFT JOIN sauderStaffPhotoDirectory ON request.requestID = sauderStaffPhotoDirectory.requestID
+		LEFT JOIN mailSlotAccessor ON request.requestID = mailSlotAccessor.requestID
+		LEFT JOIN (SELECT status, requestID FROM mailSlotAccessor JOIN mailSlotAccess ON mailSlotAccess.mailSlotAccessID = mailSlotAccessor.mailSlotAccessID WHERE shared = '1') AS sharedMail ON request.requestID = sharedMail.requestID
+		LEFT JOIN (SELECT status, requestID FROM mailSlotAccessor JOIN mailSlotAccess ON mailSlotAccess.mailSlotAccessID = mailSlotAccessor.mailSlotAccessID WHERE shared = '0') AS ownMail ON request.requestID = ownMail.requestID
+		LEFT JOIN doorNamePlate ON request.requestID = doorNamePlate.requestID
+		LEFT JOIN (SELECT requestID, status FROM sharedDriveAccess WHERE status = 'pending' OR status = 'done') AS sharedDriveAccess ON request.requestID = sharedDriveAccess.requestID
+		LEFT JOIN groupMembership ON request.requestID = groupMembership.requestID
+		LEFT JOIN computer ON request.requestID = computer.requestID
+		LEFT JOIN printingAccess ON request.requestID = printingAccess.requestID
+		LEFT JOIN email ON request.requestID = email.requestID
+		LEFT JOIN (SELECT requestID, status FROM emailGrouping WHERE status = 'pending' OR status = 'done') AS emailGrouping ON request.requestID = emailGrouping.requestID
+		LEFT JOIN (SELECT requestID, status FROM siteCoreLogin WHERE status = 'pending' OR status = 'done') AS siteCoreLogin ON request.requestID = siteCoreLogin.requestID
+		WHERE
+		request.requestID = ?
+		GROUP BY
+		request.requestID");
+		$this->loadEntryRequestQuery->execute(array($requestID));
+        if(!$res = $this->loadEntryRequestQuery->fetch())
+        {
+            throw new Exception("Could not get request '$requestID'");
+        }*/
