@@ -1747,8 +1747,9 @@ class EmployeeDataManager
 		  lastName,
 		  request.requestID,
 		  email.emailAddress,
+		  emailList.emailListID,
 		  emailList.emailListName,
-		  UNIX_TIMESTAMP(request.dateSubmitted) as dateSubmitted FROM email JOIN request ON request.requestID = email.requestID JOIN employee ON employee.employeeID = request.employeeID JOIN emailGrouping ON emailGrouping.emailAddress = email.emailAddress JOIN emailList ON emailList.emailListID = emailGrouping.emailListID WHERE email.status = '$status'");
+		  UNIX_TIMESTAMP(request.dateSubmitted) as dateSubmitted FROM email JOIN request ON request.requestID = email.requestID JOIN employee ON employee.employeeID = request.employeeID JOIN emailGrouping ON emailGrouping.emailAddress = email.emailAddress JOIN emailList ON emailList.emailListID = emailGrouping.emailListID WHERE emailGrouping.status = '$status'");
 		$this->getEmailGroupingTasksQuery->execute();
 		return $this->getEmailGroupingTasksQuery->fetchAll();
 	}

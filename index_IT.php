@@ -25,7 +25,7 @@ $content .= boxify($emailGroupingTasks, 'approve', 'EmailGrouping');
 
 $content .= "<div class='bigicon sitecore'></div>";
 $siteCoreAccessTasks = $dataMgr->getSiteCoreAccessTasks('pending');
-$content .= boxify($siteCoreAccessTasks, 'approve', 'siteCoreAccess');
+$content .= boxify($siteCoreAccessTasks, 'approve', 'SiteCoreLogin');
 
 $content .= "</td><td>";
 
@@ -44,14 +44,14 @@ $sharedDriveTasks = $dataMgr->getSharedDriveAccessTasks('done');
 $content .= boxify($sharedDriveTasks, 'undo', 'SharedDriveAccess');
 
 $content .= "<div class='bigicon email'></div>";
-$emailTasks = $dataMgr->getEmailTasks('pending');
-$content .= boxify($emailTasks, 'undo', 'EmailAccess');
+$emailTasks = $dataMgr->getEmailTasks('done');
+$content .= boxify($emailTasks, 'undo', 'Email');
 $emailGroupingTasks = $dataMgr->getEmailGroupingTasks('done');
-$content .= boxify($emailGroupingTasks, 'undo', 'EmailGroupingAccess');
+$content .= boxify($emailGroupingTasks, 'undo', 'EmailGrouping');
 
 $content .= "<div class='bigicon sitecore'></div>";
 $siteCoreAccessTasks = $dataMgr->getSiteCoreAccessTasks('done');
-$content .= boxify($siteCoreAccessTasks, 'undo', 'siteCoreAccess');
+$content .= boxify($siteCoreAccessTasks, 'undo', 'SiteCoreLogin');
 $content .= "</td></tr></table>";
 
 /*$content .= "<div class='bigicon computer'></div>";

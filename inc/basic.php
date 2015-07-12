@@ -233,16 +233,18 @@ function boxify($dataArray, $type, $item)
 			if($item == 'SharedMailSlotAccessor')
 			{
 				//print_r($data);
-				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url($type."request.php?item=MailSlotAccessor&requestid=".$data['requestID']."&mailslotaccessid=".$data['mailSlotAccessID'])."'>";
+				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url("processtask.php?type=$type&item=MailSlotAccessor&requestid=".$data['requestID']."&mailslotaccessid=".$data['mailSlotAccessID'])."'>";
 			}
 			elseif($item == 'MailSlotAccessor')
-				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url($type."request.php?item=MailSlotAccessor&requestid=".$data->requestID."&mailslotaccessid=".$data->mailSlotAccessID)."'>";
+				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url("processtask.php?type=$type&item=MailSlotAccessor&requestid=".$data->requestID."&mailslotaccessid=".$data->mailSlotAccessID)."'>";
 			elseif($item == 'PrintingAccess')
-				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url($type."request.php?item=PrintingAccess&requestid=".$data->requestID."&speedchart=".$data->speedChart)."'>";
+				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url("processtask.php?type=$type&item=PrintingAccess&requestid=".$data->requestID."&speedchart=".$data->speedChart)."'>";
 			elseif($item == 'SharedDriveAccess')
-				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url($type."request.php?item=SharedDriveAccess&requestid=".$data->requestID."&shareddriveid=".$data->sharedDriveID)."'>";
+				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url("processtask.php?type=$type&item=SharedDriveAccess&requestid=".$data->requestID."&shareddriveid=".$data->sharedDriveID)."'>";
+			elseif($item == 'EmailGrouping')
+				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url("processtask.php?type=$type&item=EmailGrouping&requestid=".$data->requestID."&emaillistid=".$data->emailListID)."'>";
 			else
-				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url($type."request.php?item=".$item."&requestid=".$data->requestID)."'>";
+				$html .= "<span style='text-align: right;'><a title='Approve' href='".get_redirect_url("processtask.php?type=$type&item=".$item."&requestid=".$data->requestID)."'>";
 			$html .= ($type == 'approve') ? "<div class='smallicon unchecked'>" : "<div class='smallicon checked'>";
 			$html .= "</div></a></span>";
 			$html .= "<table>";
