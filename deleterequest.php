@@ -1,5 +1,5 @@
 <?php
-require_once(MTA_ROOTPATH."inc/common.php");
+require_once("inc/common.php");
 try
 {
     $authMgr->enforceLoggedIn();
