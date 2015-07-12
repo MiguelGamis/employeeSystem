@@ -62,7 +62,7 @@ try
 					$content .= "<table>";
 					$content .= "<td width=300px><h3>Entry request for ".$request->firstName." ".$request->lastName."</h3></td>";
 					$content .= "<td>Submitted:</td><td width=390px id='submissionDate$requestID'/></td>\n";
-					$content .= "<td><a title='Edit' href='entryform.php?action=edit&requestid=$requestID'><div class='icon edit'></div></a><a title='Cancel' href='".get_redirect_url("deleterequest.php?requestid=".$requestID."&employeeid=".$request->employeeID)."'><div class='icon delete'></div></a></td>\n";
+					$content .= "<td><a title='Edit' href='entryform.php?action=edit&requestid=$requestID'><div class='icon edit'></div></a><a title='Cancel' onclick='return confirm(\"Are you sure you want to delete?\")' href='".get_redirect_url("deleterequest.php?requestid=".$requestID."&employeeid=".$request->employeeID)."'><div class='icon delete'></div></a></td>\n";
 					$content .= "</table>";
 					$content .= "<table cellpadding='20'width='100%'><col width='1*'><col width='1*'><col width='1*'><tr>
 					<td><h4><div class='bigicon admin'></div>Administration Tasks</h4>$adminmessage</div><button name='adminexpand' onclick='expand(\"admin\", $requestID)'><div class='icon expand'></div></button><br></td>
@@ -71,9 +71,6 @@ try
 					$content .= "<tr><td><div id='adminItems'></div></td><td></td><td><div id='ITItems'></td></tr>";
 					$content .= "</tr></table>";
 					$content .= "</div>";
-					$content .= "<script type='text/javascript'>\n";
-					$content .= "return confirm('Are you sure you want to delete');";
-					$content .= "</script>";
 					$content .= "<script type='text/javascript'>\n";
 					$content .= set_element_to_date("submissionDate$requestID", $request->dateSubmitted, "html", "MMMM Do YYYY, HH:mm", false, true);
 					$content .= "</script>\n";
